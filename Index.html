@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Công ty Đại Tín | Thiết bị - Linh kiện - Phụ tùng công nghiệp</title>
+  <meta name="description" content="Công ty Đại Tín chuyên thương mại thiết bị, linh kiện, phụ tùng, vật tư kỹ thuật cho nhà máy sản xuất công nghiệp." />
+  <style>
+    :root {
+      --primary: #0f2f55;
+      --primary-dark: #071b33;
+      --accent: #e53935;
+      --gold: #f4b740;
+      --bg: #f5f8fc;
+      --text: #1f2937;
+      --muted: #64748b;
+      --white: #ffffff;
+      --border: #dbe4f0;
+      --shadow: 0 18px 45px rgba(7, 27, 51, 0.13);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--primary-dark);
+      color: #d8e7f7;
+      font-size: 14px;
+      padding: 8px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.2px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), #1e88e5);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(15, 47, 85, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.18);
+      transform: rotate(35deg);
+      right: 5px;
+      top: -18px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: -3px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--primary-dark);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .menu a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 10px 22px rgba(229, 57, 53, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(229, 57, 53, 0.28);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 20% 10%, rgba(244, 183, 64, 0.22), transparent 25%),
+        radial-gradient(circle at 86% 30%, rgba(30, 136, 229, 0.18), transparent 28%),
+        linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 82px 0 72px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 42px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #eaf5ff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -1.4px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #dce9f7;
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .stat {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      color: white;
+      font-size: 22px;
+    }
+
+    .stat span {
+      color: #c9d9ea;
+      font-size: 13px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.24);
+    }
+
+    .machine-card {
+      background: white;
+      color: var(--primary-dark);
+      border-radius: 22px;
+      padding: 24px;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .machine-card h3 {
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .machine-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .parts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .part {
+      padding: 13px;
+      background: #f2f6fb;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--primary);
+    }
+
+    .gear {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 22px solid #d9e5f2;
+      position: absolute;
+      right: -34px;
+      bottom: -34px;
+    }
+
+    .gear::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border-radius: 50%;
+      background: white;
+      border: 14px solid var(--gold);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      color: var(--primary-dark);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(15, 47, 85, 0.06);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #edf5ff;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-box h3 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #dce9f7;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      background: var(--gold);
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .text-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .text-row {
+      background: #f6f9fd;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .text-row strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      color: var(--primary-dark);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--accent), #b71c1c);
+      color: white;
+      border-radius: 28px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #ffe4e4;
+      max-width: 760px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .contact-card {
+      background: var(--primary-dark);
+      color: white;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p,
+    .contact-card li {
+      color: #d8e7f7;
+    }
+
+    .contact-card ul {
+      margin-top: 16px;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 10px 28px rgba(15, 47, 85, 0.06);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      color: var(--primary-dark);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 13px;
+      font: inherit;
+      outline: none;
+      background: #fbfdff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #1e88e5;
+      box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.12);
+    }
+
+    textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #d8e7f7;
+      padding: 34px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-grid strong {
+      color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: inline-block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar {
+        display: none;
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand span {
+        font-size: 15px;
+      }
+
+      .brand small {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .grid-3,
+      .process,
+      .stats,
+      .parts,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .machine-card {
+        min-height: auto;
+      }
+
+      .gear {
+        opacity: 0.45;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Đối tác cung ứng thiết bị, linh kiện, phụ tùng cho nhà máy sản xuất công nghiệp</div>
+      <div>Email: contact@daitin.vn | Hotline/Zalo: 09xx xxx xxx</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Công ty Đại Tín">
+        <div class="logo">ĐT</div>
+        <span>
+          CÔNG TY ĐẠI TÍN
+          <small>Industrial Supply & Trading</small>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Menu chính">
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="#giai-phap">Giải pháp</a>
+        <a href="#ve-chung-toi">Về chúng tôi</a>
+        <a href="#quy-trinh">Quy trình</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#lien-he">Gửi yêu cầu báo giá</a>
+      <button class="mobile-menu" onclick="document.getElementById('san-pham').scrollIntoView()">Menu</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Uy tín • Nhanh chóng • Phù hợp kỹ thuật</div>
+          <h1>Đại Tín cung ứng thiết bị, linh kiện và phụ tùng cho nhà máy công nghiệp</h1>
+          <p>
+            Chúng tôi hỗ trợ doanh nghiệp sản xuất tìm đúng vật tư kỹ thuật, thiết bị thay thế,
+            linh kiện bảo trì và phụ tùng công nghiệp theo yêu cầu thực tế của dây chuyền.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lien-he">Nhận tư vấn báo giá</a>
+            <a class="btn btn-outline" href="#san-pham">Xem nhóm sản phẩm</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>01</strong>
+              <span>Đầu mối cung ứng gọn gàng</span>
+            </div>
+            <div class="stat">
+              <strong>24h</strong>
+              <span>Tiếp nhận yêu cầu nhanh</span>
+            </div>
+            <div class="stat">
+              <strong>B2B</strong>
+              <span>Phục vụ nhà máy sản xuất</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="machine-card">
+            <h3>Danh mục cung ứng linh hoạt</h3>
+            <p>
+              Thiết bị điện, cơ khí, tự động hóa, đo lường, vật tư tiêu hao,
+              phụ tùng thay thế và các hạng mục theo bản vẽ/thông số kỹ thuật.
+            </p>
+            <div class="parts">
+              <div class="part">Thiết bị điện</div>
+              <div class="part">Linh kiện tự động hóa</div>
+              <div class="part">Phụ tùng máy</div>
+              <div class="part">Vật tư bảo trì</div>
+              <div class="part">Đo lường - cảm biến</div>
+              <div class="part">Gia công theo mẫu</div>
+            </div>
+            <div class="gear"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="san-pham">
+      <div class="container">
+        <div class="section-title">
+          <span>Nhóm sản phẩm</span>
+          <h2>Cung cấp đa dạng vật tư kỹ thuật cho nhà máy</h2>
+          <p>
+            Đại Tín tập trung vào các nhóm hàng phục vụ bảo trì, sửa chữa, thay thế,
+            cải tiến thiết bị và vận hành sản xuất công nghiệp.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Thiết bị điện công nghiệp</h3>
+            <p>Tủ điện, aptomat, contactor, relay, cáp điện, thiết bị đóng cắt, đèn báo, nút nhấn và phụ kiện điện.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧩</div>
+            <h3>Linh kiện tự động hóa</h3>
+            <p>Cảm biến, encoder, PLC, HMI, biến tần, module điều khiển, thiết bị truyền thông và phụ kiện lắp đặt.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⚙️</div>
+            <h3>Phụ tùng cơ khí</h3>
+            <p>Vòng bi, bạc đạn, dây curoa, xích tải, bánh răng, con lăn, khớp nối, phớt, gioăng và chi tiết thay thế.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🌡️</div>
+            <h3>Đo lường - điều khiển</h3>
+            <p>Đồng hồ áp suất, cảm biến nhiệt, lưu lượng, mức, thiết bị đo môi trường và phụ kiện đường ống.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧰</div>
+            <h3>Vật tư bảo trì</h3>
+            <p>Dụng cụ kỹ thuật, vật tư tiêu hao, keo, dầu mỡ, hóa chất kỹ thuật, bulong, ốc vít và phụ kiện sửa chữa.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏭</div>
+            <h3>Hàng theo yêu cầu nhà máy</h3>
+            <p>Tìm kiếm, đối chiếu mã hàng, thay thế tương đương, đặt hàng theo mẫu, bản vẽ hoặc thông số vận hành.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="giai-phap" class="about">
+      <div class="container">
+        <div class="section-title">
+          <span>Giá trị dịch vụ</span>
+          <h2>Không chỉ bán hàng, Đại Tín hỗ trợ khách hàng chọn đúng giải pháp</h2>
+          <p>
+            Với các hạng mục kỹ thuật, việc chọn sai mã hàng hoặc sai thông số có thể gây dừng máy,
+            phát sinh chi phí và ảnh hưởng tiến độ sản xuất.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🔎</div>
+            <h3>Rà soát thông số</h3>
+            <p>Tiếp nhận hình ảnh, mã hàng, catalogue, bản vẽ hoặc yêu cầu thực tế để đối chiếu trước khi báo giá.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🔁</div>
+            <h3>Đề xuất thay thế</h3>
+            <p>Tìm phương án tương đương khi mã cũ khó mua, ngừng sản xuất hoặc cần tối ưu chi phí.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🚚</div>
+            <h3>Hỗ trợ tiến độ</h3>
+            <p>Phân loại hàng sẵn, hàng đặt, hàng cần xác nhận kỹ thuật để khách hàng chủ động kế hoạch bảo trì.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ve-chung-toi">
+      <div class="container about-grid">
+        <div class="about-box">
+          <h3>Đại Tín hướng tới trở thành đối tác cung ứng tin cậy của các nhà máy sản xuất.</h3>
+          <div class="about-list">
+            <div class="about-item">
+              <span class="check">✓</span>
+              <span>Tập trung vào sản phẩm phục vụ vận hành, bảo trì và sửa chữa công nghiệp.</span>
+            </div>
+            <div class="about-item">
+              <span class="check">✓</span>
+              <span>Linh hoạt tìm nguồn hàng theo mã, theo mẫu, theo hình ảnh hoặc yêu cầu kỹ thuật.</span>
+            </div>
+            <div class="about-item">
+              <span class="check">✓</span>
+              <span>Ưu tiên báo giá rõ ràng, giao tiếp nhanh, giảm thời gian chờ xử lý của khách hàng.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-list">
+          <div class="text-row">
+            <strong>Sứ mệnh</strong>
+            Cung cấp thiết bị, linh kiện, phụ tùng công nghiệp phù hợp nhu cầu thực tế, giúp khách hàng giảm rủi ro dừng máy và tối ưu công tác mua hàng.
+          </div>
+          <div class="text-row">
+            <strong>Cam kết</strong>
+            Báo đúng thông tin, đúng thông số đã xác nhận, minh bạch về thời gian giao hàng và điều kiện cung cấp.
+          </div>
+          <div class="text-row">
+            <strong>Khách hàng phù hợp</strong>
+            Nhà máy sản xuất, xưởng cơ khí, đơn vị bảo trì, phòng kỹ thuật, phòng mua hàng và các doanh nghiệp cần vật tư công nghiệp.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quy-trinh">
+      <div class="container">
+        <div class="section-title">
+          <span>Quy trình làm việc</span>
+          <h2>4 bước tiếp nhận và xử lý yêu cầu báo giá</h2>
+          <p>Quy trình đơn giản giúp khách hàng gửi yêu cầu nhanh và nhận phản hồi rõ ràng.</p>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <h3>Gửi yêu cầu</h3>
+            <p>Khách hàng gửi mã hàng, hình ảnh, thông số, số lượng hoặc mô tả nhu cầu sử dụng.</p>
+          </div>
+          <div class="step">
+            <h3>Kiểm tra kỹ thuật</h3>
+            <p>Đối chiếu thông tin, làm rõ điểm chưa đủ và xác định phương án cung ứng phù hợp.</p>
+          </div>
+          <div class="step">
+            <h3>Báo giá</h3>
+            <p>Gửi báo giá kèm mô tả hàng hóa, số lượng, thời gian giao hàng và điều kiện thương mại.</p>
+          </div>
+          <div class="step">
+            <h3>Giao hàng</h3>
+            <p>Theo dõi đơn hàng, bàn giao chứng từ và hỗ trợ sau bán hàng khi khách hàng cần.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Bạn đang cần tìm thiết bị hoặc phụ tùng cho nhà máy?</h2>
+            <p>Gửi mã hàng, ảnh chụp tem nhãn, thông số hoặc mô tả nhu cầu. Đại Tín sẽ tiếp nhận và phản hồi phương án phù hợp.</p>
+          </div>
+          <a class="btn btn-outline" href="#lien-he">Liên hệ ngay</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="lien-he">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h3>Liên hệ Công ty Đại Tín</h3>
+          <p>
+            Thay các thông tin bên dưới bằng số điện thoại, email, địa chỉ thật của công ty bạn trước khi đưa website lên GitHub.
+          </p>
+          <ul>
+            <li><strong>Hotline/Zalo:</strong> 09xx xxx xxx</li>
+            <li><strong>Email:</strong> contact@daitin.vn</li>
+            <li><strong>Địa chỉ:</strong> Hà Nội / Hưng Yên / Việt Nam</li>
+            <li><strong>Thời gian làm việc:</strong> Thứ 2 - Thứ 7</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" onsubmit="sendMail(event)">
+          <div class="form-grid">
+            <div>
+              <label for="name">Họ tên</label>
+              <input id="name" type="text" placeholder="Nguyễn Văn A" />
+            </div>
+            <div>
+              <label for="phone">Số điện thoại</label>
+              <input id="phone" type="text" placeholder="09xx xxx xxx" />
+            </div>
+            <div class="full">
+              <label for="company">Công ty</label>
+              <input id="company" type="text" placeholder="Tên công ty / nhà máy" />
+            </div>
+            <div class="full">
+              <label for="message">Nội dung yêu cầu</label>
+              <textarea id="message" placeholder="Nhập mã hàng, thông số, số lượng hoặc mô tả nhu cầu..."></textarea>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary" type="submit">Tạo email yêu cầu báo giá</button>
+              <p class="note">
+                Form này dùng chế độ mở email trên máy người gửi. Nếu muốn lưu dữ liệu vào Google Sheet, cần làm thêm backend hoặc dùng Google Form/Apps Script.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>CÔNG TY ĐẠI TÍN</strong><br />
+        Thiết bị • Linh kiện • Phụ tùng công nghiệp
+      </div>
+      <div>© <span id="year"></span> Đại Tín. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sendMail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Yêu cầu báo giá thiết bị/phụ tùng công nghiệp");
+      const body = encodeURIComponent(
+        "Họ tên: " + name + "\n" +
+        "Số điện thoại: " + phone + "\n" +
+        "Công ty: " + company + "\n\n" +
+        "Nội dung yêu cầu:\n" + message
+      );
+
+      window.location.href = "mailto:contact@daitin.vn?subject=" + subject + "&body=" + body;
+    }
+  </script>
+</body>
+</html>
